@@ -1,0 +1,38 @@
+{
+  "name": "@ingameltd/paysafecard",
+  "version": "1.0.0",
+  "description": "Paysafecard client for NodeJS",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "tsc",
+    "build:check": "tsc --noEmit",
+    "watch": "tsc --watch",
+    "test": "echo 'no tests yet'",
+    "docs": "npx typedoc --out docs src"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.5",
+    "typedoc": "^0.17.7",
+    "typescript": "^3.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ingameltd/paysafecard.git"
+  },
+  "keywords": [
+    "paysafecard",
+    "typescript",
+    "nodejs"
+  ],
+  "author": "Kasun Vithanage",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ingameltd/paysafecard/issues"
+  },
+  "homepage": "https://github.com/ingameltd/paysafecard#readme"
+}
