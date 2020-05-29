@@ -58,7 +58,7 @@ export interface Payment {
      * @type {number}
      * @memberof Payment
      */
-    submerchant_id: number;
+    submerchant_id?: number;
 
     /**
      * Identification of the shop which is the originator of the request. 
@@ -68,7 +68,7 @@ export interface Payment {
      * @type {string}
      * @memberof Payment
      */
-    shop_id: string;
+    shop_id?: string;
 }
 
 /**
@@ -134,9 +134,8 @@ export interface Redirect {
      * @memberof Redirect
      */
     success_url: string;
-
     /**
-     * Notification URL we will contact after the authorization has been successfully completed. 
+     * Notification URL we will contact after the authorization has been successfully completed.
      * The placeholder `{payment_id}` in the URL is replaced with the actual ID of this payment.
      *
      * @example https://notification.com/{payment_id}
@@ -145,5 +144,4 @@ export interface Redirect {
      */
     failure_url: string;
 }
-
 

@@ -1,3 +1,5 @@
+import { CustomerResponse } from "./CustomerResponse";
+
 /**
  * Payment created response object
  *
@@ -13,17 +15,19 @@ export interface PaymentCreatedResponse {
     currency: string;
     status: string;
     redirect: RedirectResponse;
-    customer: CustomerResponse;
+    customer?: CustomerResponse;
     notification_url: string;
 }
 
-export interface CustomerResponse {
-    id: string;
-}
-
+/**
+ * Redirect response from payment created
+ *
+ * @export
+ * @interface RedirectResponse
+ */
 export interface RedirectResponse {
-    success_url: string;
-    failure_url: string;
+    success_url?: string;
+    failure_url?: string;
 
     /**
      * Authentication url where customer needed to be redirect

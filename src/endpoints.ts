@@ -1,1 +1,1 @@
-export const PaymentsEndpoint: string = "/v1/payments";
+export const PaymentsEndpoint: string = "/payments";

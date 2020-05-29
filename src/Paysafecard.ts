@@ -4,6 +4,8 @@ import { PaymentCreatedResponse } from './Payments/PaymentCreatedResponse';
 import { PaymentsEndpoint } from './endpoints';
 import { PaysafecardErrorResponse } from './errors/PaysafecardErrorResponse';
 import { PaysafecardError } from './errors/PaysafecardError';
+import { PaymentRetriveResponse } from './Payments/PaymentRetriveResponse';
+import { PaymentCaptureResponse } from './Payments/PaymentCaptureResponse';
 
 
 const TEST_ENV = 'https://apitest.paysafecard.com/v1';
@@ -55,6 +57,40 @@ export class Paysafecard {
             };
             const response = await this.client.post(PaymentsEndpoint, data);
             return <PaymentCreatedResponse>response.data;
+        } catch (error) {
+            const response = <PaysafecardErrorResponse>error.response.data;
+            throw new PaysafecardError(response.code, response.message, response.number, response.param);
+        }
+    }
+
+    /**
+     * Retrive a payment
+     *
+     * @param {string} paymentId - payment id
+     * @returns {Promise<PaymentRetriveResponse>}
+     * @memberof Paysafecard
+     */
+    public async retrievePayment (paymentId: string): Promise<PaymentRetriveResponse> {
+        try {
+            const resp = await this.client.get(`${PaymentsEndpoint}/${paymentId}`);
+            return <PaymentRetriveResponse>resp.data;
+        } catch (error) {
+            const response = <PaysafecardErrorResponse>error.response.data;
+            throw new PaysafecardError(response.code, response.message, response.number, response.param);
+        }
+    }
+
+    /**
+     * Capture payment to accept it
+     *
+     * @param {string} paymentId - payment id
+     * @returns {Promise<PaymentRetriveResponse>}
+     * @memberof Paysafecard
+     */
+    public async capturePayment (paymentId: string): Promise<PaymentCaptureResponse> {
+        try {
+            const resp = await this.client.post(`${PaymentsEndpoint}/${paymentId}/capture`, {});
+            return <PaymentCaptureResponse>resp.data;
         } catch (error) {
             const response = <PaysafecardErrorResponse>error.response.data;
             throw new PaysafecardError(response.code, response.message, response.number, response.param);
