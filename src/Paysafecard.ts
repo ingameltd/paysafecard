@@ -45,17 +45,22 @@ export class Paysafecard {
      * Initiate a payment
      *
      * @param {Payment} payment - Payment object
+     * @param {string} correlationId - Use this for modify the ID given by paysafecard
      * @throws {PaysafecardError}
      * @returns {Promise<PaymentCreatedResponse>}
      * @memberof Paysafecard
      */
-    public async initiatePayment (payment: Payment): Promise<PaymentCreatedResponse> {
+    public async initiatePayment (payment: Payment, correlationId: string = ''): Promise<PaymentCreatedResponse> {
         try {
             const data = {
                 ...payment,
                 type: 'PAYSAFECARD'
             };
-            const response = await this.client.post(PaymentsEndpoint, data);
+            let headers: any = {}
+            if (correlationId !== '') {
+                headers['Correlation-ID'] = correlationId;
+            }
+            const response = await this.client.post(PaymentsEndpoint, data, { headers: headers });
             return <PaymentCreatedResponse>response.data;
         } catch (error) {
             const response = <PaysafecardErrorResponse>error.response.data;
