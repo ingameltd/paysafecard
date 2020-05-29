@@ -2,7 +2,7 @@ import Axios, { AxiosInstance } from 'axios';
 import { Payment } from './Payments/Payment';
 import { PaymentCreatedResponse } from './Payments/PaymentCreatedResponse';
 import { PaymentsEndpoint } from './endpoints';
-import { PaysafecardErrorResponse } from './errors/PaysafecardErrorResponse';
+import { PaysafecardErrorResponse, getPaysafecardError } from './errors/PaysafecardErrorResponse';
 import { PaysafecardError } from './errors/PaysafecardError';
 import { PaymentRetriveResponse } from './Payments/PaymentRetriveResponse';
 import { PaymentCaptureResponse } from './Payments/PaymentCaptureResponse';
@@ -59,7 +59,7 @@ export class Paysafecard {
             return <PaymentCreatedResponse>response.data;
         } catch (error) {
             const response = <PaysafecardErrorResponse>error.response.data;
-            throw new PaysafecardError(response.code, response.message, response.number, response.param);
+            throw getPaysafecardError(error.response.status, response);
         }
     }
 
@@ -76,7 +76,7 @@ export class Paysafecard {
             return <PaymentRetriveResponse>resp.data;
         } catch (error) {
             const response = <PaysafecardErrorResponse>error.response.data;
-            throw new PaysafecardError(response.code, response.message, response.number, response.param);
+            throw getPaysafecardError(error.response.status, response);
         }
     }
 
@@ -93,7 +93,7 @@ export class Paysafecard {
             return <PaymentCaptureResponse>resp.data;
         } catch (error) {
             const response = <PaysafecardErrorResponse>error.response.data;
-            throw new PaysafecardError(response.code, response.message, response.number, response.param);
+            throw getPaysafecardError(error.response.status, response);
         }
     }
 }
