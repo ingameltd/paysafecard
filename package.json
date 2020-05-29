@@ -12,6 +12,9 @@
     "test": "echo 'no tests yet'",
     "docs": "npx typedoc --out docs src"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "axios": "^0.19.2"
   },
