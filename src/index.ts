@@ -17,3 +17,4 @@ export * from './Payments/PaymentRetriveResponse';
 
 // paysafecard
 export * from './Paysafecard';
+export * from './PaysafecardOptions';

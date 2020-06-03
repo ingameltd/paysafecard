@@ -1,4 +1,3 @@
-import https from 'https';
 import Axios, { AxiosInstance } from 'axios';
 import { Payment } from './Payments/Payment';
 import { PaymentCreatedResponse } from './Payments/PaymentCreatedResponse';
@@ -6,6 +5,7 @@ import { PaymentsEndpoint } from './endpoints';
 import { PaysafecardErrorResponse, getPaysafecardError } from './errors/PaysafecardErrorResponse';
 import { PaymentRetriveResponse } from './Payments/PaymentRetriveResponse';
 import { PaymentCaptureResponse } from './Payments/PaymentCaptureResponse';
+import { PaysafecardOptions } from './PaysafecardOptions';
 
 
 const TEST_ENV = 'https://apitest.paysafecard.com/v1';
@@ -14,38 +14,6 @@ const PROD_ENV = 'https://api.paysafecard.com/v1';
 const CLOUD_TEST_ENV = 'https://api-cg.test.paysafecard.com/v1';
 const CLOUD_PROD_ENV = 'https://api-cg.paysafecard.com/v1';
 
-/**
- * Paysafecard options
- *
- * @export
- * @interface PaysafecardOptions
- */
-export interface PaysafecardOptions {
-    /**
-     * Whether to enable test mode
-     *
-     * @type {boolean}
-     * @memberof PaysafecardOptions
-     */
-    testMode?: boolean;
-
-    /**
-     * Use this if you have enabled cloud mode with paysafecard support(if you cannot obtain a static ip)
-     *
-     * @type {boolean}
-     * @memberof PaysafecardOptions
-     */
-    cloudMode?: boolean;
-
-    /**
-     * Provide your cloud certificates in a custom https agent
-     * For example a .p12 file with passphrase
-     *
-     * @type {https.Agent}
-     * @memberof PaysafecardOptions
-     */
-    httpsAgent?: https.Agent;
-};
 
 /**
  * Paysafecard 
