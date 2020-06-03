@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RedirectResponse | @ingameltd/paysafecard</title>
+	<title>PaysafecardOptions | @ingameltd/paysafecard</title>
 	<meta name="description" content="Documentation for @ingameltd/paysafecard">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_payments_paymentcreatedresponse_.html">&quot;Payments/PaymentCreatedResponse&quot;</a>
+					<a href="../modules/_paysafecardoptions_.html">&quot;PaysafecardOptions&quot;</a>
 				</li>
 				<li>
-					<a href="_payments_paymentcreatedresponse_.redirectresponse.html">RedirectResponse</a>
+					<a href="_paysafecardoptions_.paysafecardoptions.html">PaysafecardOptions</a>
 				</li>
 			</ul>
-			<h1>Interface RedirectResponse</h1>
+			<h1>Interface PaysafecardOptions</h1>
 		</div>
 	</div>
 </header>
@@ -72,13 +72,13 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Redirect response from payment created</p>
+						<p>Paysafecard options</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>export</dt>
 						<dd></dd>
 						<dt>interface</dt>
-						<dd><p>RedirectResponse</p>
+						<dd><p>PaysafecardOptions</p>
 						</dd>
 					</dl>
 				</div>
@@ -87,7 +87,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">RedirectResponse</span>
+						<span class="target">PaysafecardOptions</span>
 					</li>
 				</ul>
 			</section>
@@ -98,9 +98,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_payments_paymentcreatedresponse_.redirectresponse.html#auth_url" class="tsd-kind-icon">auth_<wbr>url</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_payments_paymentcreatedresponse_.redirectresponse.html#failure_url" class="tsd-kind-icon">failure_<wbr>url</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_payments_paymentcreatedresponse_.redirectresponse.html#success_url" class="tsd-kind-icon">success_<wbr>url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_paysafecardoptions_.paysafecardoptions.html#cloudmode" class="tsd-kind-icon">cloud<wbr>Mode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_paysafecardoptions_.paysafecardoptions.html#httpsagent" class="tsd-kind-icon">https<wbr>Agent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_paysafecardoptions_.paysafecardoptions.html#testmode" class="tsd-kind-icon">test<wbr>Mode</a></li>
 							</ul>
 						</section>
 					</div>
@@ -109,44 +109,65 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="auth_url" class="tsd-anchor"></a>
-					<h3>auth_<wbr>url</h3>
-					<div class="tsd-signature tsd-kind-icon">auth_<wbr>url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="cloudmode" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> cloud<wbr>Mode</h3>
+					<div class="tsd-signature tsd-kind-icon">cloud<wbr>Mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ingameltd/paysafecard/blob/6bde139/src/Payments/PaymentCreatedResponse.ts#L38">src/Payments/PaymentCreatedResponse.ts:38</a></li>
+							<li>Defined in <a href="https://github.com/ingameltd/paysafecard/blob/6bde139/src/PaysafecardOptions.ts#L23">src/PaysafecardOptions.ts:23</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Authentication url where customer needed to be redirect</p>
+							<p>Use this if you have enabled cloud mode with paysafecard support(if you cannot obtain a static ip)</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>memberof</dt>
-							<dd><p>RedirectResponse</p>
+							<dd><p>PaysafecardOptions</p>
 							</dd>
 						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="failure_url" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> failure_<wbr>url</h3>
-					<div class="tsd-signature tsd-kind-icon">failure_<wbr>url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="httpsagent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> https<wbr>Agent</h3>
+					<div class="tsd-signature tsd-kind-icon">https<wbr>Agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">https.Agent</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ingameltd/paysafecard/blob/6bde139/src/Payments/PaymentCreatedResponse.ts#L30">src/Payments/PaymentCreatedResponse.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/ingameltd/paysafecard/blob/6bde139/src/PaysafecardOptions.ts#L31">src/PaysafecardOptions.ts:31</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Provide your cloud certificates in a custom https agent
+							For example a .p12 file with passphrase</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>memberof</dt>
+							<dd><p>PaysafecardOptions</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="success_url" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> success_<wbr>url</h3>
-					<div class="tsd-signature tsd-kind-icon">success_<wbr>url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="testmode" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> test<wbr>Mode</h3>
+					<div class="tsd-signature tsd-kind-icon">test<wbr>Mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ingameltd/paysafecard/blob/6bde139/src/Payments/PaymentCreatedResponse.ts#L29">src/Payments/PaymentCreatedResponse.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/ingameltd/paysafecard/blob/6bde139/src/PaysafecardOptions.ts#L16">src/PaysafecardOptions.ts:16</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether to enable test mode</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>memberof</dt>
+							<dd><p>PaysafecardOptions</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -168,7 +189,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_payments_paymentcaptureresponse_.html">&quot;<wbr>Payments/<wbr>Payment<wbr>Capture<wbr>Response&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_payments_paymentcreatedresponse_.html">&quot;<wbr>Payments/<wbr>Payment<wbr>Created<wbr>Response&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -177,7 +198,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_paysafecard_.html">&quot;<wbr>Paysafecard&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/_paysafecardoptions_.html">&quot;<wbr>Paysafecard<wbr>Options&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -205,22 +226,19 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_payments_paymentcreatedresponse_.paymentcreatedresponse.html" class="tsd-kind-icon">Payment<wbr>Created<wbr>Response</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_payments_paymentcreatedresponse_.redirectresponse.html" class="tsd-kind-icon">Redirect<wbr>Response</a>
+						<a href="_paysafecardoptions_.paysafecardoptions.html" class="tsd-kind-icon">Paysafecard<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_payments_paymentcreatedresponse_.redirectresponse.html#auth_url" class="tsd-kind-icon">auth_<wbr>url</a>
+								<a href="_paysafecardoptions_.paysafecardoptions.html#cloudmode" class="tsd-kind-icon">cloud<wbr>Mode</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_payments_paymentcreatedresponse_.redirectresponse.html#failure_url" class="tsd-kind-icon">failure_<wbr>url</a>
+								<a href="_paysafecardoptions_.paysafecardoptions.html#httpsagent" class="tsd-kind-icon">https<wbr>Agent</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_payments_paymentcreatedresponse_.redirectresponse.html#success_url" class="tsd-kind-icon">success_<wbr>url</a>
+								<a href="_paysafecardoptions_.paysafecardoptions.html#testmode" class="tsd-kind-icon">test<wbr>Mode</a>
 							</li>
 						</ul>
 					</li>
