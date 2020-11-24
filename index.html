@@ -84,7 +84,7 @@
   Paysafecard,
   Payment
   Currency,
-} <span class="hljs-keyword">from</span> <span class="hljs-string">"@ingameltd/paysafecard"</span>;</code></pre>
+} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@ingameltd/paysafecard&quot;</span>;</code></pre>
 				<a href="#initialization" id="initialization" style="color: inherit; text-decoration: none;">
 					<h3>Initialization</h3>
 				</a>
@@ -96,15 +96,15 @@
 					<h3>Create an order</h3>
 				</a>
 				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> psc.initiatePayment({
-  amount: <span class="hljs-number">0.2</span>,
-  currency: Currency.EUR,
-  customer: {
-    id: <span class="hljs-string">"b4e7fa08-1dde-4f45-b3dd-3e5e99a2177d"</span>,
+  <span class="hljs-attr">amount</span>: <span class="hljs-number">0.2</span>,
+  <span class="hljs-attr">currency</span>: Currency.EUR,
+  <span class="hljs-attr">customer</span>: {
+    <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;b4e7fa08-1dde-4f45-b3dd-3e5e99a2177d&quot;</span>,
   },
-  notification_url: <span class="hljs-string">" https://notification.com/payment?payment_id={payment_id}"</span>,
-  redirect: {
-    success_url: <span class="hljs-string">"https://mystore.com/order?orderId={payment_id}"</span>,
-    failure_url: <span class="hljs-string">"https://mystore.com/order?orderId={payment_id}&amp;error=true"</span>,
+  <span class="hljs-attr">notification_url</span>: <span class="hljs-string">&quot; https://notification.com/payment?payment_id={payment_id}&quot;</span>,
+  <span class="hljs-attr">redirect</span>: {
+    <span class="hljs-attr">success_url</span>: <span class="hljs-string">&quot;https://mystore.com/order?orderId={payment_id}&quot;</span>,
+    <span class="hljs-attr">failure_url</span>: <span class="hljs-string">&quot;https://mystore.com/order?orderId={payment_id}&amp;error=true&quot;</span>,
   },
 });</code></pre>
 				<a href="#retrive-order" id="retrive-order" style="color: inherit; text-decoration: none;">
@@ -112,7 +112,7 @@
 				</a>
 				<p>When the notification arrives, merchant should retrive the payment from the Paysafecard.</p>
 				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> paysafecard.retrievePayment(
-  <span class="hljs-string">"id of the paysafecard transaction"</span>
+  <span class="hljs-string">&quot;id of the paysafecard transaction&quot;</span>
 );</code></pre>
 				<a href="#capture-order" id="capture-order" style="color: inherit; text-decoration: none;">
 					<h3>Capture order</h3>
@@ -120,7 +120,7 @@
 				<p>After retrive order, if it is in <code>Authorized</code> state, merchant should capture order with the following API call
 				to transfer funds from customer to the merchant.</p>
 				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> paysafecard.captureOrder(
-  <span class="hljs-string">"id of the paysafecard transaction"</span>
+  <span class="hljs-string">&quot;id of the paysafecard transaction&quot;</span>
 );</code></pre>
 			</div>
 		</div>
